@@ -55,6 +55,12 @@ class MainActivity : ComponentActivity() {
                             Text(text = "Group Notifications")
                         }
 
+                        Spacer(modifier = Modifier.padding(12.dp))
+
+                        Button(onClick = { actionNotifications(this@MainActivity) }){
+                            Text(text = "Action Notifications")
+                        }
+
 
 
                     }
