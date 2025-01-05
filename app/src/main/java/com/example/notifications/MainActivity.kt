@@ -49,6 +49,13 @@ class MainActivity : ComponentActivity() {
                             Text(text = "Urgent Notification")
                         }
 
+                        Spacer(modifier = Modifier.padding(12.dp))
+
+                        Button(onClick = { groupingNotifications(this@MainActivity) }){
+                            Text(text = "Group Notifications")
+                        }
+
+
 
                     }
                 }
