@@ -12,6 +12,10 @@ const val DEFAULT_NAME = "default_name"
 const val SILENT = "silent"
 const val SILENT_NAME = "silent_name"
 
+const val URGENT = "urgent"
+const val URGENT_NAME = "urgent_name"
+
+
 class BaseApplication:Application() {
 
     override fun onCreate() {
@@ -22,10 +26,14 @@ class BaseApplication:Application() {
 
             val channel = NotificationChannel(DEFAULT, DEFAULT_NAME,NotificationManager.IMPORTANCE_DEFAULT)
 
+            val urgentChannel = NotificationChannel(URGENT, URGENT_NAME,NotificationManager.IMPORTANCE_HIGH)
+
             val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
             notificationManager.createNotificationChannel(channel)
             notificationManager.createNotificationChannel(silentChannel)
+            notificationManager.createNotificationChannel(urgentChannel)
+
 
         }
     }
